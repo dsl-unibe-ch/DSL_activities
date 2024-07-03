@@ -2,9 +2,6 @@ format: jb-book
 root: README
 
 parts:
-  - caption: DSL
-    chapters:
-    - file: README
   - caption: Collaborations
     chapters:
     - file: collaborations/Collaborations_readme
