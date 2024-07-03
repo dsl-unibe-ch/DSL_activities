@@ -1,0 +1,9 @@
+title: DSL activities
+author: DSL Team
+
+execute:
+  execute_notebooks: 'off'
+
+sphinx:
+  config:
+    html_extra_path: ['.','book/images']
