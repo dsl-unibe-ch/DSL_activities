@@ -11,6 +11,7 @@ parts:
   - caption: Projects
     chapters:
     - file: projects/microfilm
+    - file: projects/DataTour.md
   - caption: How-to guides
     chapters:
     - file: howto/Howto_readme
