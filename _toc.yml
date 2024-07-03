@@ -3,7 +3,10 @@ root: README
 
 parts:
   - caption: Collaborations
+    chapters:
+    - file: collaborations/Collaborations_readme
   - caption: Trainings
+    chapters:
     - file: trainings/Trainings_readme
   - caption: Projects
     chapters:
