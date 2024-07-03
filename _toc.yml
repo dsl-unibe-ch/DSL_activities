@@ -5,6 +5,7 @@ parts:
   - caption: Collaborations
     chapters:
     - file: collaborations/Collaborations_readme
+    - file: collaborations/two-photon_tools.md
   - caption: Trainings
     chapters:
     - file: trainings/Trainings_readme
