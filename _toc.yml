@@ -2,6 +2,10 @@ format: jb-book
 root: README
 
 parts:
+  - caption: Collaborations
+  - caption: Trainings
+    - file: trainings/Trainings_readme
   - caption: Projects
     chapters:
     - file: projects/microfilm
+  - caption: How-to guides
