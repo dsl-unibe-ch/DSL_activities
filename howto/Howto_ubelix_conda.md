@@ -14,7 +14,7 @@ The first solution is to just create a plain conda environment:
    module load Anaconda3
    eval "$(conda shell.bash hook)"
    ```
-2. Then create your environment as usual. **Important**: include `ipykernel` in it. You can find an example of an environment file [here](https://raw.githubusercontent.com/dsl-unibe-ch/DSL_activities/refs/heads/main/assets/ubelix_conda/custom_env.md)
+2. Then create your environment as usual. **Important**: include `ipykernel` in it. You can find an example of an environment file [here](https://raw.githubusercontent.com/dsl-unibe-ch/DSL_activities/refs/heads/main/assets/ubelix_conda/custom_env.yml)
 3. Activate the environment and add it to your jupyter kernels. Follow [this](https://hpc-unibe-ch.github.io/runjobs/ondemand/jupyter/)
    ```
    conda activate custom_env
