@@ -1,0 +1,56 @@
+Bootstrap: docker
+From: rockylinux/rockylinux:9-minimal
+
+%post
+
+    # -------------------------
+    # Basic dnf
+    # -------------------------
+
+    microdnf -y install dnf
+    dnf -y update && dnf -y upgrade
+    dnf install -y dnf-plugins-core
+    dnf install -y epel-release
+    dnf config-manager --set-enabled crb
+    dnf install -y bash wget jq
+
+    # -------------------------
+    # Python tooling
+    # -------------------------
+
+    # install miniforge in /opt
+    # wget into /opt
+    wget -P /opt "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh"
+    bash /opt/Miniforge3-$(uname)-$(uname -m).sh -b -p /opt/conda
+    
+    # make conda available during build
+    . /opt/conda/etc/profile.d/conda.sh
+
+    # -------------------------
+    # Application creation
+    # -------------------------
+
+    conda env create -f /opt/custom_env.yml
+    conda activate custom_env
+
+    # -------------------------
+    # Cleanup
+    # -------------------------
+
+    # Cleanup temporary files
+    rm -rf /var/cache/dnf/*
+    rm -f /var/log/dnf*
+    rm -rf /root/.cache/pip
+    rm -f /opt/Miniforge3-${MINIFORGE_VERSION}-$(uname)-$(uname -m).sh
+    
+    # remove conda cache
+    conda clean --all -y
+
+%files
+    custom_env.yml /opt/custom_env.yml
+
+%runscript
+    
+    . /opt/conda/etc/profile.d/conda.sh
+    conda activate custom_env
+    exec python "$@"

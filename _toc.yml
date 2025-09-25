@@ -16,3 +16,5 @@ parts:
   - caption: How-to guides
     chapters:
     - file: howto/Howto_readme
+    - file: howto/Howto_ubelix_conda
+
